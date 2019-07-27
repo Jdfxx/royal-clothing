@@ -26,18 +26,18 @@ class Directory extends Component {
           linkUrl: "shop/sneakers"
         },
         {
-          title: "womens",
+          title: "women",
           imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
           size: "large",
           id: 4,
-          linkUrl: "shop/womens"
+          linkUrl: "shop/women"
         },
         {
           title: "mens",
           imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
           size: "large",
           id: 5,
-          linkUrl: "shop/mens"
+          linkUrl: "shop/men"
         }
       ]
     };
@@ -47,9 +47,11 @@ class Directory extends Component {
 
     const {sections} = this.state;
     
-    const sectionsContent = sections.map(({id, title, imageUrl, size})=>(
-        <MenuItem key={id} title={title} imgUrl={imageUrl} size={size}/>
+    const sectionsContent = sections.map((item)=>(
+        <MenuItem key={item.id} title={item.title} imageUrl={item.imageUrl} size={item.size} linkUrl={item.linkUrl} /> 
     ));
+
+    console.log(sectionsContent);
     
     return (<div className="directory-menu" >
     {sectionsContent}

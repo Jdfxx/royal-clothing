@@ -50,8 +50,6 @@ class Directory extends Component {
     const sectionsContent = sections.map((item)=>(
         <MenuItem key={item.id} title={item.title} imageUrl={item.imageUrl} size={item.size} linkUrl={item.linkUrl} /> 
     ));
-
-    console.log(sectionsContent);
     
     return (<div className="directory-menu" >
     {sectionsContent}

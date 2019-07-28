@@ -4,6 +4,7 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import ShopPage from "./pages/shoppage/ShopPage.component";
 import Header from "./components/header/header.component";
+import signInAndSignup from "./pages/sign-and-sign-up/sign-and-sign-up.component";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/shop/sneakers" component={HomePage} exact />
         <Route path="/shop/women" component={HomePage} exact />
         <Route path="/shop/men" component={HomePage} exact />
+        <Route path="/login" component={signInAndSignup} exact />
 
       </Switch>
     </div>

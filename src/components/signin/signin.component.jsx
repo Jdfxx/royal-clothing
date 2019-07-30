@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import FormInput from "../FormInput/form-input.component";
-import './sigin.styles.scss';
+import "./signin.styles.scss";
 import CustomButton from "../CustomButton/custom-button.component";
+import { signInWithGoogle } from "../../firebase/firebase.utils.js";
 
 class Signin extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Signin extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
     this.setState({
       email: "",
       password: ""
@@ -25,6 +27,10 @@ class Signin extends Component {
     this.setState({
       [name]: value
     });
+  };
+
+  handleGoogleSubmit = () => {
+    signInWithGoogle();
   };
 
   render() {
@@ -49,7 +55,12 @@ class Signin extends Component {
             handleChange={this.handleChange}
             label="password"
           />
-          <CustomButton type='submit'>Submit</CustomButton>
+          <div className="buttons">
+            <CustomButton type="submit">Submit</CustomButton>
+            <CustomButton isGoogleSignIn onClick={this.handleGoogleSubmit}>
+              Signin with Google
+            </CustomButton>
+          </div>
         </form>
       </div>
     );

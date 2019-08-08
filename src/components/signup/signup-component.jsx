@@ -36,7 +36,7 @@ class Signup extends Component {
           <FormInput
             type="text"
             name="email"
-            id="email"
+            id="email2"
             value={this.state.email}
             handleChange={this.handleChange}
             label="email"
@@ -44,7 +44,7 @@ class Signup extends Component {
           <FormInput
             type="password"
             name="password"
-            id="password"
+            id="password2"
             value={this.state.password}
             handleChange={this.handleChange}
             label="password"

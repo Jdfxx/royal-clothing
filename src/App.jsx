@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import HomePage from "./pages/homepage/HomePage.component";
 import "./App.css";
-import {Switch, Route} from "react-router-dom";
+import {Switch, Route, Redirect} from "react-router-dom";
 import ShopPage from "./pages/shoppage/ShopPage.component";
 import Header from "./components/header/header.component";
-import signInAndSignup from "./pages/sign-and-sign-up/sign-and-sign-up.component";
+import SignInAndSignup from "./pages/sign-and-sign-up/sign-and-sign-up.component";
 import "./firebase/firebase.utils";
 import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
 import {connect} from "react-redux";
@@ -45,7 +45,8 @@ class App extends Component {
                     <Route path="/shop/sneakers" component={HomePage} exact/>
                     <Route path="/shop/women" component={HomePage} exact/>
                     <Route path="/shop/men" component={HomePage} exact/>
-                    <Route path="/login" component={signInAndSignup} exact/>
+                  <Route path="/login" render={() => this.props.currentUser ? <Redirect to={'/'}/> : <SignInAndSignup/>}
+                         exact/>
                 </Switch>
             </div>
         );
@@ -56,7 +57,11 @@ const mapDispatchToProps = dispatch => ({
     setCurrentUser: user => dispatch(setUser(user))
 });
 
+const mapStateToProps = state => ({
+  currentUser: state.user.currentUser
+});
+
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(App);

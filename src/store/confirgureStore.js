@@ -12,7 +12,6 @@ const composeEnhancers = composeWithDevTools({
     traceLimit: 25
 });
 
-
 const store = createStore(
     rootReducer,
     {},

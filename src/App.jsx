@@ -3,7 +3,7 @@ import HomePage from "./pages/homepage/HomePage.component";
 import "./App.css";
 import {Switch, Route, Redirect} from "react-router-dom";
 import ShopPage from "./pages/shoppage/ShopPage.component";
-import Header from "./components/header/header.component";
+import Header from "./components/Header/header.component";
 import SignInAndSignup from "./pages/sign-and-sign-up/sign-and-sign-up.component";
 import "./firebase/firebase.utils";
 import {auth, createUserProfileDocument} from "./firebase/firebase.utils";

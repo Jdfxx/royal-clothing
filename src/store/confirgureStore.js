@@ -3,6 +3,7 @@ import rootReducer from "./root.reducer";
 import {composeWithDevTools} from "redux-devtools-extension";
 import logger from "redux-logger";
 import * as actionCreators from './index';
+import {persistStore} from "redux-persist";
 
 const middleware = [logger];
 
@@ -12,10 +13,12 @@ const composeEnhancers = composeWithDevTools({
     traceLimit: 25
 });
 
-const store = createStore(
+export const store = createStore(
     rootReducer,
     {},
     composeEnhancers(applyMiddleware(...middleware))
 );
 
-export default store;
+export const persistor = persistStore(store);
+
+export default {store, persistor};

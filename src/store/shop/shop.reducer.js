@@ -1,4 +1,5 @@
-const initialState = [
+const initialState = {
+  collections: [
   {
     id: 1,
     title: "Hats",
@@ -244,7 +245,7 @@ const initialState = [
       }
     ]
   }
-];
+]};
 
 const reducer = (state = initialState, action) => {
   const { type, payload } = action;

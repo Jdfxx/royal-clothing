@@ -5,7 +5,7 @@ import logger from "redux-logger";
 import * as actionCreators from './index';
 import {persistStore} from "redux-persist";
 
-const middleware = [logger];
+const middleware = [];
 
 const composeEnhancers = composeWithDevTools({
     actionCreators,

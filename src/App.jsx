@@ -42,12 +42,7 @@ class App extends Component {
           <Header/>
           <Switch>
             <Route path="/" component={HomePage} exact/>
-            <Route path="/shop" component={ShopPage} exact/>
-            <Route path="/shop/hats" component={HomePage} exact/>
-            <Route path="/shop/jackets" component={HomePage} exact/>
-            <Route path="/shop/sneakers" component={HomePage} exact/>
-            <Route path="/shop/women" component={HomePage} exact/>
-            <Route path="/shop/men" component={HomePage} exact/>
+            <Route path='/shop' component={ShopPage} />
             <Route
                 path="/login"
                 render={() =>

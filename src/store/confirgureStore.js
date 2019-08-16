@@ -1,7 +1,6 @@
 import {applyMiddleware, createStore} from "redux";
 import rootReducer from "./root.reducer";
 import {composeWithDevTools} from "redux-devtools-extension";
-import logger from "redux-logger";
 import * as actionCreators from './index';
 import {persistStore} from "redux-persist";
 

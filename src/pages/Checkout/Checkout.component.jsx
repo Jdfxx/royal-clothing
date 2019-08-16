@@ -7,9 +7,9 @@ import {
   selectCartTotal
 } from "../../store/cart/cart.selectors";
 import CheckoutItem from "../../components/CheckoutItem/CheckoutItems.component";
+import StripeButton from '../../components/StripeButton/StripeButton.component';
 
 const Checkout = ({ cartItems, total }) => {
-  console.log(total);
   return (
     <div className="checkout-page">
       <div className="checkout-header">
@@ -35,6 +35,14 @@ const Checkout = ({ cartItems, total }) => {
       <div className="total">
         <span>TOTAL: ${total}</span>
       </div>
+
+      <div className={"test-warning"}>
+        *Please use test credit card* <br />
+        Number: 4242 4242 4242 4242 <br />
+        Expires: 01/20 <br />
+        CVV: 123
+        </div>
+      <StripeButton price={total}/>
     </div>
   );
 };

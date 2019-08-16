@@ -7,6 +7,7 @@ import {
   removeItem
 } from "../../store/cart/cart.actions";
 
+
 const CheckoutItem = ({
   item,
   removeItemFromCart,

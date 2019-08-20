@@ -7,9 +7,7 @@ import {persistStore} from "redux-persist";
 
 const middleware = [];
 
-if(process.env.NODE_ENV === 'development') {
-    middleware.push(logger);
-};
+process.env.NODE_ENV === 'development' && middleware.push(logger);
 
 const composeEnhancers = composeWithDevTools({
     actionCreators,

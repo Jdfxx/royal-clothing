@@ -12,6 +12,7 @@ import {setUser} from "./store/user/user.actions";
 import {selectCurrentUser} from "./store/user/user.selectors";
 import {createStructuredSelector} from "reselect";
 import Checkout from "./pages/Checkout/Checkout.component";
+import {selectCollectionsForPreview} from "./store/shop/shop.selector";
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -66,7 +67,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
+  collectionsArray: selectCollectionsForPreview
 });
 
 export default connect(

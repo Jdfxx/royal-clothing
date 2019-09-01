@@ -1,9 +1,10 @@
 import {
+    CHECK_USER_SESSION,
     EMAIL_SIGNIN_START,
     GOOGLE_SIGNIN_START,
     SET_CURRENT_USER,
     SIGNIN_FAILURE,
-    SIGNIN_SUCCESS
+    SIGNIN_SUCCESS, SIGNOUT_FAILURE, SIGNOUT_START, SIGNOUT_SUCCESS
 } from "./user.actionTypes";
 
 export const setUser = user => {
@@ -14,29 +15,54 @@ export const setUser = user => {
 };
 
 
-export const googleSigninStart = ()=> {
+export const googleSigninStart = () => {
     return {
         type: GOOGLE_SIGNIN_START
     }
 };
 
-export const signinSuccess = (user)=> {
+export const signinSuccess = (user) => {
     return {
         type: SIGNIN_SUCCESS,
         payload: user
     }
 };
 
-export const signinFailure = (error)=> {
+export const signinFailure = (error) => {
     return {
         type: SIGNIN_FAILURE,
         payload: error
     }
 };
 
-export const emailSigninStart = (emailAndPassword)=> {
+export const emailSigninStart = (emailAndPassword) => {
     return {
         type: EMAIL_SIGNIN_START,
         payload: emailAndPassword
+    }
+};
+
+export const checkUserSession = () => {
+    return {
+        type: CHECK_USER_SESSION
+    }
+};
+
+export const signoutStart = ()=> {
+    return {
+        type: SIGNOUT_START
+    }
+};
+
+export const signoutSuccess = ()=> {
+    return {
+        type: SIGNOUT_SUCCESS
+    }
+};
+
+export const signoutFailure = (error)=> {
+    return {
+        type: SIGNOUT_FAILURE,
+        payload: error
     }
 };

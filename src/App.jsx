@@ -5,9 +5,8 @@ import {Switch, Route, Redirect} from "react-router-dom";
 import ShopPage from "./pages/Shop/ShopPage.component";
 import Header from "./components/Header/header.component";
 import SignInAndSignup from "./pages/Sign-and-sign-up/sign-and-sign-up.component";
-import "./firebase/firebase.utils";
 import {connect} from "react-redux";
-import {setUser} from "./store/user/user.actions";
+import {checkUserSession} from "./store/user/user.actions";
 import {selectCurrentUser} from "./store/user/user.selectors";
 import {createStructuredSelector} from "reselect";
 import Checkout from "./pages/Checkout/Checkout.component";
@@ -30,6 +29,7 @@ class App extends Component {
     //     this.props.setCurrentUser(null);
     //   }
     // });
+    this.props.checkUserSession();
   }
 
   componentWillUnmount() {
@@ -62,7 +62,7 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setUser(user))
+    checkUserSession: ()=> dispatch(checkUserSession())
 });
 
 const mapStateToProps = createStructuredSelector({

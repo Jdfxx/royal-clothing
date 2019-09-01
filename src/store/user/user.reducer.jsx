@@ -1,7 +1,7 @@
 import {
     SIGNIN_SUCCESS,
     SIGNIN_FAILURE,
-    SET_CURRENT_USER
+    SET_CURRENT_USER, SIGNOUT_FAILURE, SIGNOUT_SUCCESS
 } from "./user.actionTypes";
 
 const initialState = {
@@ -19,13 +19,20 @@ const reducer = (state = initialState, action) => {
                     currentUser: payload
                 };
             }
+            case SIGNOUT_SUCCESS: {
+                return {
+                    ...state,
+                    currentUser: null,
+                    error: null
+                }
+            }
             case SIGNIN_SUCCESS:
                 return {
                     ...state,
                     currentUser: payload,
                     error: null
                 };
-
+            case SIGNOUT_FAILURE:
             case SIGNIN_FAILURE:
                 return {
                     ...state,

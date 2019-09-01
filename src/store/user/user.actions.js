@@ -4,7 +4,13 @@ import {
     GOOGLE_SIGNIN_START,
     SET_CURRENT_USER,
     SIGNIN_FAILURE,
-    SIGNIN_SUCCESS, SIGNOUT_FAILURE, SIGNOUT_START, SIGNOUT_SUCCESS
+    SIGNIN_SUCCESS,
+    SIGNOUT_FAILURE,
+    SIGNOUT_START,
+    SIGNOUT_SUCCESS,
+    SIGNUP_START,
+    SIGNUP_FAILURE,
+    SIGNUP_SUCCESS
 } from "./user.actionTypes";
 
 export const setUser = user => {
@@ -48,21 +54,42 @@ export const checkUserSession = () => {
     }
 };
 
-export const signoutStart = ()=> {
+export const signoutStart = () => {
     return {
         type: SIGNOUT_START
     }
 };
 
-export const signoutSuccess = ()=> {
+export const signoutSuccess = () => {
     return {
         type: SIGNOUT_SUCCESS
     }
 };
 
-export const signoutFailure = (error)=> {
+export const signoutFailure = (error) => {
     return {
         type: SIGNOUT_FAILURE,
+        payload: error
+    }
+};
+
+export const signupStart = (userCredentials) => {
+    return {
+        type: SIGNUP_START,
+        payload: userCredentials
+    }
+};
+
+export const signupSuccess = ({user, additionalData}) => {
+    return {
+        type: SIGNUP_SUCCESS,
+        payload: {user, additionalData}
+    }
+};
+
+export const signupFailure = (error) => {
+    return {
+        type: SIGNUP_FAILURE,
         payload: error
     }
 };

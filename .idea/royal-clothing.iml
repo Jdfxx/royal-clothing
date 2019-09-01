@@ -11,5 +11,10 @@
     <orderEntry type="library" name="@types/redux-actions" level="application" />
     <orderEntry type="library" name="@types/react-redux" level="application" />
     <orderEntry type="library" name="@types/redux-mock-store" level="application" />
+    <orderEntry type="library" name="@types/node" level="application" />
+    <orderEntry type="library" name="@types/express" level="application" />
+    <orderEntry type="library" name="@types/redux-saga-routines" level="application" />
+    <orderEntry type="library" name="@types/react" level="application" />
+    <orderEntry type="library" name="@types/styled-components" level="application" />
   </component>
 </module>

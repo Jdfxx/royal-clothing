@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import HomePage from "./pages/Home/HomePage.component";
-import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 import ShopPage from "./pages/Shop/ShopPage.component";
 import Header from "./components/Header/header.component";
@@ -10,14 +9,16 @@ import { checkUserSession } from "./store/user/user.actions";
 import { selectCurrentUser } from "./store/user/user.selectors";
 import { createStructuredSelector } from "reselect";
 import Checkout from "./pages/Checkout/Checkout.component";
+import {GlobalStyle} from './global.styles'
 
-const App = ({ checkUserSession, currentUser, collectionsArray }) => {
+const App = ({ checkUserSession, currentUser }) => {
   useEffect(() => {
     checkUserSession();
   }, [checkUserSession]);
 
   return (
     <div>
+      <GlobalStyle/>
       <Header />
       <Switch>
         <Route path="/" component={HomePage} exact />

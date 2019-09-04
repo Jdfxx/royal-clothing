@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import StripeCheckout from "react-stripe-checkout";
 import './StripeButton.styles.scss';
 
@@ -29,4 +29,4 @@ const StripeButton = ({price}) => {
     );
 };
 
-export default StripeButton;
+export default memo(StripeButton);

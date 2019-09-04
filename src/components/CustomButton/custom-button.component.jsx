@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import { CustomButtonContainer } from "./custom-button.styles";
 
 const CustomButton = props => {
@@ -7,4 +7,4 @@ const CustomButton = props => {
   );
 };
 
-export default CustomButton;
+export default memo(CustomButton);

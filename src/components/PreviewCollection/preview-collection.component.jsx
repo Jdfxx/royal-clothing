@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import "./preview-collection.styles.scss";
 import CollectionItem from "../CollectionItem/collection-item.component";
 import {withRouter} from 'react-router-dom';
@@ -16,4 +16,4 @@ const PreviewCollection = ({ title, items, match, history, routeName }) => {
   );
 };
 
-export default withRouter(PreviewCollection);
+export default withRouter(memo(PreviewCollection));
